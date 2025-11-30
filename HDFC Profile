@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HDFC Bank Relationship Manager Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Using Inter for a modern, clean corporate font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        hdfc: {
+                            // Deep Corporate Blue - primary brand color
+                            primary: '#0f4c81', 
+                            // Red Accent - commonly used in branding/buttons
+                            accent: '#e3381e', 
+                            // Light Blue for secondary elements
+                            secondary: '#1e3a8a',
+                            light: '#f8fafc', 
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col items-center">
+
+    <!-- Top HDFC Branding Strip -->
+    <header class="w-full bg-hdfc-primary h-28 relative overflow-hidden shadow-xl">
+        <div class="container mx-auto px-6 h-full flex flex-col justify-center relative z-10">
+            <div class="flex items-center gap-3 text-white">
+                <!-- Simple HDFC Logo Placeholder Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-hdfc-accent" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.5V10.5h2v7H11zM12 8.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                </svg>
+                <span class="font-bold text-2xl tracking-wide text-white">HDFC BANK</span>
+            </div>
+            <p class="text-white/80 text-sm mt-1">Digital Relationship Manager</p>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="w-full max-w-2xl -mt-10 px-4 mb-20 relative z-20">
+        
+        <!-- Profile Card -->
+        <div class="bg-white rounded-xl shadow-2xl p-6 mb-8 border-t-8 border-hdfc-accent">
+            <div class="flex flex-col sm:flex-row items-center gap-6">
+                <!-- Profile Image -->
+                <div class="relative">
+                    <img 
+                        src="https://placehold.co/100x100/0f4c81/ffffff?text=RM" 
+                        alt="Employee Photo" 
+                        class="w-24 h-24 rounded-full object-cover border-4 border-white shadow-md bg-gray-200"
+                    >
+                    <div class="absolute bottom-0 right-0 bg-green-500 w-5 h-5 rounded-full border-2 border-white shadow-md" title="Available"></div>
+                </div>
+                
+                <!-- Info -->
+                <div class="text-center sm:text-left flex-1">
+                    <h1 class="text-3xl font-bold text-hdfc-primary">Sanjay Kumar</h1>
+                    <p class="text-gray-600 font-medium text-lg">Preferred Relationship Manager</p>
+                    <div class="flex justify-center sm:justify-start mt-2">
+                        <!-- Staff Code Badge -->
+                        <div class="bg-gray-100 px-3 py-1 rounded-md border border-gray-300 text-center flex items-center gap-2">
+                            <p class="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Staff Code</p>
+                            <span class="text-xl font-mono font-extrabold text-hdfc-accent" id="staff-code">HDFC9103</span>
+                            <button onclick="copyCode()" class="text-hdfc-primary hover:text-hdfc-accent transition-colors">
+                                <i class="far fa-copy text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Title -->
+        <h2 class="text-xl font-bold text-hdfc-primary mb-4 px-2">Client Investment Links</h2>
+        
+        <!-- Links Grid -->
+        <div class="grid gap-4">
+
+            <!-- Link 1: Fixed Deposit -->
+            <a href="https://www.hdfcbank.com/fd?ref=HDFC9103" target="_blank" class="group bg-white p-5 rounded-xl shadow-sm border-l-4 border-hdfc-accent hover:shadow-lg transition-all flex items-center">
+                <div class="w-10 h-10 rounded-full bg-hdfc-accent/10 text-hdfc-accent flex items-center justify-center text-xl mr-4 group-hover:bg-hdfc-accent group-hover:text-white transition-colors">
+                    <i class="fas fa-hand-holding-usd"></i>
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-bold text-gray-900">Book Fixed Deposit (FD)</h3>
+                    <p class="text-sm text-gray-500">Highest safety and assured returns.</p>
+                </div>
+                <div class="text-gray-300 group-hover:text-hdfc-primary group-hover:translate-x-1 transition-all">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+
+            <!-- Link 2: SIP -->
+            <a href="https://www.hdfcbank.com/sip?ref=HDFC9103" target="_blank" class="group bg-white p-5 rounded-xl shadow-sm border-l-4 border-hdfc-primary hover:shadow-lg transition-all flex items-center">
+                <div class="w-10 h-10 rounded-full bg-hdfc-primary/10 text-hdfc-primary flex items-center justify-center text-xl mr-4 group-hover:bg-hdfc-primary group-hover:text-white transition-colors">
+                    <i class="fas fa-chart-area"></i>
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-bold text-gray-900">Start Systematic Investment Plan (SIP)</h3>
+                    <p class="text-sm text-gray-500">Achieve your financial goals with mutual funds.</p>
+                </div>
+                <div class="text-gray-300 group-hover:text-hdfc-primary group-hover:translate-x-1 transition-all">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+
+            <!-- Link 3: Recurring Deposit -->
+            <a href="https://www.hdfcbank.com/rd?ref=HDFC9103" target="_blank" class="group bg-white p-5 rounded-xl shadow-sm border-l-4 border-teal-500 hover:shadow-lg transition-all flex items-center">
+                <div class="w-10 h-10 rounded-full bg-teal-500/10 text-teal-600 flex items-center justify-center text-xl mr-4 group-hover:bg-teal-500 group-hover:text-white transition-colors">
+                    <i class="fas fa-piggy-bank"></i>
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-bold text-gray-900">Open Recurring Deposit (RD)</h3>
+                    <p class="text-sm text-gray-500">Flexible way to build savings over time.</p>
+                </div>
+                <div class="text-gray-300 group-hover:text-teal-600 group-hover:translate-x-1 transition-all">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- Contact Section -->
+        <div class="mt-8 bg-hdfc-primary rounded-xl p-6 text-white text-center shadow-2xl">
+            <h3 class="text-xl font-bold mb-4 border-b border-white/30 pb-3">Connect Directly</h3>
+            
+            <div class="grid grid-cols-3 gap-3">
+                <a href="tel:+919876543210" class="flex flex-col items-center bg-white text-hdfc-primary hover:bg-gray-200 p-3 rounded-lg font-medium transition-colors">
+                    <i class="fas fa-phone text-lg mb-1"></i>
+                    <span class="text-xs font-semibold">Call Me</span>
+                </a>
+                <a href="https://wa.me/919876543210" target="_blank" class="flex flex-col items-center bg-green-500 text-white hover:bg-green-600 p-3 rounded-lg font-medium transition-colors">
+                    <i class="fab fa-whatsapp text-lg mb-1"></i>
+                    <span class="text-xs font-semibold">WhatsApp</span>
+                </a>
+                <a onclick="copyEmail()" class="flex flex-col items-center bg-white/10 text-white hover:bg-white/20 p-3 rounded-lg font-medium transition-colors cursor-pointer">
+                    <i class="fas fa-envelope text-lg mb-1"></i>
+                    <span class="text-xs font-semibold">Email</span>
+                </a>
+            </div>
+            <p id="email-display" class="mt-4 text-sm text-white/80">sanjay.kumar@hdfcbank.com</p>
+        </div>
+
+        <!-- Compliance Footer -->
+        <div class="mt-8 text-center px-4 pb-4">
+            <p class="text-[10px] text-gray-400 leading-relaxed">
+                HDFC Bank Ltd. is committed to ethical and transparent banking practices. For official transactions, always use the secure links provided above. Staff Code: HDFC9103. <br>
+                Investments are subject to risks. Terms and conditions apply.
+            </p>
+        </div>
+
+    </main>
+
+    <!-- Toast Notification for Copy -->
+    <div id="toast" class="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-hdfc-primary text-white px-4 py-2 rounded-full shadow-2xl opacity-0 transition-opacity duration-300 pointer-events-none flex items-center gap-2 text-sm z-50">
+        <i class="fas fa-check-circle text-hdfc-accent"></i>
+        <span id="toast-message">Code copied!</span>
+    </div>
+
+    <script>
+        // Function to copy staff code to clipboard
+        function copyCode() {
+            const code = document.getElementById('staff-code').innerText;
+            copyToClipboard(code, 'Code copied!');
+        }
+
+        // Function to copy email to clipboard
+        function copyEmail() {
+            const email = document.getElementById('email-display').innerText;
+            copyToClipboard(email, 'Email copied!');
+        }
+
+        // Generic copy function
+        function copyToClipboard(text, message) {
+            const tempInput = document.createElement("input");
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            
+            try {
+                document.execCommand('copy');
+                showToast(message);
+            } catch (err) {
+                console.error('Failed to copy text: ', err);
+                showToast('Copy failed!', true);
+            }
+            
+            document.body.removeChild(tempInput);
+        }
+
+        // Function to show the toast notification
+        function showToast(message, isError = false) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toast-message');
+            const toastIcon = toast.querySelector('i');
+
+            toastMessage.textContent = message;
+            
+            if (isError) {
+                toast.classList.add('bg-red-600');
+                toastIcon.classList.remove('text-hdfc-accent', 'fa-check-circle');
+                toastIcon.classList.add('text-white', 'fa-times-circle');
+            } else {
+                toast.classList.remove('bg-red-600');
+                toastIcon.classList.remove('fa-times-circle');
+                toastIcon.classList.add('text-hdfc-accent', 'fa-check-circle');
+            }
+
+            toast.classList.remove('opacity-0');
+            
+            setTimeout(() => {
+                toast.classList.add('opacity-0');
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
+
